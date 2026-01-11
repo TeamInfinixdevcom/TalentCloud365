@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7b5debec.css",
+    "main.js": "/static/js/main.bd39b2a7.js",
+    "static/media/Logo_talent365.png": "/static/media/Logo_talent365.693d726abe9300e000ad.png",
+    "static/media/INFINIX LOGO.png": "/static/media/INFINIX LOGO.48d4c365da74dd84d767.png",
+    "index.html": "/index.html",
+    "main.7b5debec.css.map": "/static/css/main.7b5debec.css.map",
+    "main.bd39b2a7.js.map": "/static/js/main.bd39b2a7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b5debec.css",
+    "static/js/main.bd39b2a7.js"
+  ]
+}

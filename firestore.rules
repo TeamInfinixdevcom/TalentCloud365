@@ -1,0 +1,55 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Función para verificar si el usuario es admin
+    function isAdmin() {
+      return request.auth != null && 
+             get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.rol == 'admin';
+    }
+    
+    // Colección usuarios
+    match /usuarios/{userId} {
+      // Cada usuario puede leer su propio documento, admin puede leer todos
+      allow read: if request.auth.uid == userId || isAdmin();
+      
+      // Solo admin puede crear usuarios
+      allow create: if isAdmin();
+      
+      // Admin puede actualizar cualquier usuario, usuario puede actualizar el suyo
+      allow update: if request.auth.uid == userId || isAdmin();
+      
+      // Solo admin puede eliminar usuarios
+      allow delete: if isAdmin();
+    }
+    
+    // Colección ventas (móvil)
+    match /ventas/{document=**} {
+      // Agentes pueden leer y crear sus propias ventas
+      allow read: if request.auth.uid != null;
+      allow create: if request.auth.uid != null;
+      allow update: if request.auth.uid != null;
+      allow delete: if request.auth.uid != null;
+    }
+    
+    // Colección ventas_hogar
+    match /ventas_hogar/{document=**} {
+      // Agentes pueden leer y crear sus propias ventas hogar
+      allow read: if request.auth.uid != null;
+      allow create: if request.auth.uid != null;
+      allow update: if request.auth.uid != null;
+      allow delete: if request.auth.uid != null;
+    }
+    
+    // Configuración y estadísticas (lectura para todos los autenticados)
+    match /_config/{document=**} {
+      allow read: if request.auth.uid != null;
+    }
+    
+    match /_stats/{document=**} {
+      allow read: if request.auth.uid != null;
+    }
+    
+  }
+}
+

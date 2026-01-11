@@ -1,0 +1,448 @@
+/* VentasList.css - Estilos iOS 26 para lista de ventas */
+
+.ventas-list-container {
+  padding: 0;
+}
+
+.ventas-header {
+  margin-bottom: 24px;
+}
+
+.ventas-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1d1d1d;
+}
+
+.ventas-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/* Filtros de búsqueda */
+.search-filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  padding: 16px;
+  background: #f9f9f9;
+  border-radius: 12px;
+}
+
+.search-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.search-field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+}
+
+.search-field input {
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: white;
+  transition: border-color 0.2s ease;
+}
+
+.search-field input:focus {
+  outline: none;
+  border-color: #007AFF;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.clear-search-btn {
+  padding: 10px 16px;
+  border: none;
+  background-color: #ff3b30;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.clear-search-btn:hover {
+  background-color: #d32f2f;
+}
+
+.results-count {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.filter-select {
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #007AFF;
+}
+
+.ventas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.venta-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 4px solid #007AFF;
+}
+
+.venta-card.hogar {
+  border-left-color: #34c759;
+}
+
+.venta-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.venta-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 12px;
+}
+
+.venta-type-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.venta-type-badge.movil {
+  background-color: #e3f2fd;
+  color: #0051D5;
+}
+
+.venta-type-badge.hogar {
+  background-color: #f0f9ff;
+  color: #30b354;
+}
+
+.venta-plan {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1d1d1d;
+  margin-bottom: 12px;
+}
+
+.venta-detail {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.venta-detail-label {
+  color: #999;
+  font-weight: 500;
+}
+
+.venta-price {
+  font-size: 14px;
+  font-weight: 600;
+  color: #007AFF;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.empty-ventas {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.empty-ventas-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.empty-ventas-text {
+  font-size: 16px;
+  color: #666;
+}
+
+.pagination {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 10px 16px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  border-color: #007AFF;
+  color: #007AFF;
+  background-color: #f0f7ff;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination button.active {
+  background-color: #007AFF;
+  color: white;
+  border-color: #007AFF;
+}
+
+.page-info {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+@media (max-width: 480px) {
+  .ventas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ventas-filters {
+    flex-direction: column;
+  }
+
+  .filter-select {
+    width: 100%;
+  }
+
+  .venta-detail {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+/* Botones de filtro */
+.filter-btn {
+  padding: 10px 20px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: #007AFF;
+  color: #007AFF;
+}
+
+.filter-btn.active {
+  background-color: #007AFF;
+  color: white;
+  border-color: #007AFF;
+}
+
+/* Botones de acción en cards */
+.venta-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.action-btn.edit {
+  background-color: #f0f0f0;
+}
+
+.action-btn.edit:hover {
+  background-color: #007AFF;
+}
+
+.action-btn.delete {
+  background-color: #f0f0f0;
+}
+
+.action-btn.delete:hover {
+  background-color: #ff3b30;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-content p {
+  margin: 0 0 12px 0;
+  color: #666;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-cancel {
+  flex: 1;
+  padding: 12px 20px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-cancel:hover {
+  background-color: #f5f5f5;
+}
+
+.btn-delete {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  background: #ff3b30;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+  background-color: #d32f2f;
+}
+
+.btn-save {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  background: #007AFF;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-save:hover {
+  background-color: #0056b3;
+}
+
+/* Modal de edición */
+.edit-modal {
+  max-width: 500px;
+}
+
+.edit-field {
+  margin-bottom: 16px;
+}
+
+.edit-field label {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.edit-field input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.edit-field input:focus {
+  outline: none;
+  border-color: #007AFF;
+}

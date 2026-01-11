@@ -1,0 +1,159 @@
+/* RegistroHogar.css - Estilos iOS 26 para registro de ventas hogar */
+
+.registro-hogar-container {
+  max-width: 90%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.registro-hogar-header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.registro-hogar-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #1d1d1d;
+}
+
+.registro-hogar-header p {
+  font-size: 15px;
+  color: #666;
+  margin: 0;
+}
+
+.hogar-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.hogar-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hogar-form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d1d1d;
+  display: block;
+}
+
+.hogar-form-group input,
+.hogar-form-group select {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #f9f9f9;
+}
+
+.hogar-form-group input:focus,
+.hogar-form-group select:focus {
+  outline: none;
+  border-color: #34c759;
+  box-shadow: 0 0 0 3px rgba(52, 199, 89, 0.1);
+  background-color: white;
+}
+
+.hogar-required::after {
+  content: ' *';
+  color: #ff3b30;
+}
+
+.hogar-form-button {
+  padding: 14px;
+  background: linear-gradient(135deg, #34c759 0%, #30b354 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 12px;
+}
+
+.hogar-form-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(52, 199, 89, 0.3);
+}
+
+.hogar-form-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hogar-result {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  animation: slideUp 0.3s ease;
+}
+
+.hogar-result.success {
+  background-color: #d1f2eb;
+  border: 1px solid #34c759;
+  color: #00563b;
+}
+
+.hogar-result.error {
+  background-color: #fce8e6;
+  border: 1px solid #ff3b30;
+  color: #5c0000;
+}
+
+.hogar-result strong {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.hogar-result-doc-id {
+  font-size: 12px;
+  margin-top: 8px;
+  opacity: 0.8;
+  word-break: break-all;
+  padding-top: 8px;
+  border-top: 1px solid currentColor;
+  opacity: 0.7;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .hogar-form-wrapper {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .registro-hogar-header h2 {
+    font-size: 24px;
+  }
+
+  .hogar-form-group input,
+  .hogar-form-group select {
+    font-size: 16px; /* Previene zoom en iOS */
+  }
+}

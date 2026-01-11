@@ -1,0 +1,26 @@
+{
+  "name": "talentcloud-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^1.4.0",
+    "chart.js": "^4.5.1",
+    "firebase": "^12.7.0",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.1",
+    "react-scripts": "5.0.1"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

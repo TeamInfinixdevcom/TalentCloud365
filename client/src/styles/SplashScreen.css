@@ -1,0 +1,173 @@
+/* Splash Screen Styles */
+.splash-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  perspective: 1000px;
+}
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.splash-logo-wrapper {
+  margin-bottom: 40px;
+  animation: splashDepthZoom 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.splash-logo {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+  display: block;
+}
+
+.splash-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #0066ff;
+  margin: 0 0 10px 0;
+  animation: splashTextFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  letter-spacing: -1px;
+}
+
+.splash-subtitle {
+  font-size: 16px;
+  color: #999;
+  margin: 0 0 30px 0;
+  animation: splashTextFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.splash-info-box {
+  background: rgba(230, 243, 255, 0.8);
+  border: 1px solid rgba(0, 102, 255, 0.2);
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin: 0 0 30px 0;
+  max-width: 420px;
+  animation: splashTextFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.8s both;
+  backdrop-filter: blur(10px);
+}
+
+.splash-info-label {
+  margin: 8px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.splash-label-key {
+  color: #0066ff;
+  font-weight: 600;
+}
+
+.splash-label-value {
+  color: #333;
+  margin-left: 4px;
+}
+
+.splash-copyright {
+  margin: 12px 0 0 0;
+  font-size: 11px;
+  color: #999;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 12px;
+}
+
+.splash-dots {
+  display: flex;
+  gap: 8px;
+  animation: splashTextFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 1s both;
+}
+
+.splash-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0066ff;
+  animation: splashDotsBounce 1.4s infinite;
+}
+
+.splash-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.splash-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Efecto Apple: zoom desde atrás */
+@keyframes splashDepthZoom {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.3) translateZ(-500px);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1) translateZ(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateZ(0);
+  }
+}
+
+/* Fade in para textos */
+@keyframes splashTextFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de puntos bounce */
+@keyframes splashDotsBounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+/* Fade out final */
+.splash-container.fade-out {
+  animation: splashFadeOut 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes splashFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

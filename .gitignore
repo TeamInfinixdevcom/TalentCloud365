@@ -1,0 +1,6 @@
+node_modules/
+.firebase/
+desktop.ini
+.env
+*.log
+talentcloud365-firebase-adminsdk-*.json

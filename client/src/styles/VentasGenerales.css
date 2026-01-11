@@ -1,0 +1,214 @@
+/* Ventas Generales - Estilos */
+
+.ventas-generales-container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1d1d1d;
+  margin: 0 0 8px 0;
+}
+
+.page-header p {
+  color: #666;
+  margin: 0;
+  font-size: 14px;
+}
+
+.filters-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+}
+
+.filters-bar label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.filters-bar select {
+  padding: 10px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+  min-width: 250px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 16px;
+  color: #666;
+}
+
+.agencias-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.agencia-section {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.agencia-header-card {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.agencia-header-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #007AFF;
+  margin: 0 0 16px 0;
+}
+
+.agencia-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  border-left: 4px solid #007AFF;
+}
+
+.metric-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.metric-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: #007AFF;
+}
+
+.agentes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.agente-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.agente-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 122, 255, 0.15);
+  border-color: #007AFF;
+}
+
+.agente-header {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.agente-nombre {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1d1d1d;
+}
+
+.agente-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.stat-number {
+  font-size: 18px;
+  font-weight: 700;
+  color: #007AFF;
+}
+
+.access-denied {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.denied-icon {
+  font-size: 64px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.access-denied h2 {
+  font-size: 24px;
+  color: #ff3b30;
+  margin-bottom: 8px;
+}
+
+.access-denied p {
+  color: #666;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .agencia-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .agentes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filters-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filters-bar select {
+    min-width: 100%;
+  }
+}

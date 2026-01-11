@@ -1,0 +1,170 @@
+/* Auth.css - Estilos iOS 26 para Login y Register */
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #007AFF 0%, #0051D5 100%);
+  padding: 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(0, 122, 255, 0.2);
+  animation: slideUp 0.5s ease;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.auth-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #1d1d1d;
+}
+
+.auth-header p {
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.auth-form .form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d1d1d;
+}
+
+.auth-form input,
+.auth-form select {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #f9f9f9;
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+  outline: none;
+  border-color: #007AFF;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+  background-color: white;
+}
+
+.auth-error {
+  padding: 12px;
+  background-color: #fce8e6;
+  border: 1px solid #ff3b30;
+  border-radius: 8px;
+  color: #5c0000;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.auth-success {
+  padding: 12px;
+  background-color: #d1f2eb;
+  border: 1px solid #34c759;
+  border-radius: 8px;
+  color: #00563b;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.auth-button {
+  padding: 14px;
+  background: linear-gradient(135deg, #007AFF 0%, #0051D5 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 8px;
+}
+
+.auth-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 122, 255, 0.3);
+}
+
+.auth-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.auth-footer p {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #1d1d1d;
+}
+
+.auth-footer a {
+  color: #007AFF;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.auth-footer a:hover {
+  opacity: 0.7;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 24px;
+  }
+
+  .auth-header h1 {
+    font-size: 24px;
+  }
+
+  .auth-form input,
+  .auth-form select {
+    font-size: 16px; /* Previene zoom en iOS */
+  }
+}
